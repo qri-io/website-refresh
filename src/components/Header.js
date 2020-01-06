@@ -34,7 +34,7 @@ function myFunction() {
   }
 }
 
-const Header = ({location}) => (
+const Header = ({ location, showSidebar }) => (
   <StaticQuery
     query={
       graphql`
@@ -94,8 +94,7 @@ const Header = ({location}) => (
               ): null}
             <div id="navbar" className={'topnav'}>
               <div className={'visibleMobile'}>
-                <Sidebar location={location} />
-                <hr/>
+                {showSidebar && <><Sidebar location={location} /> <hr/></>}
                 {isSearchEnabled ? (
                   <div className={'searchWrapper'}>
                     <LoadableComponent collapse={true} indices={searchIndices} />
@@ -105,6 +104,15 @@ const Header = ({location}) => (
               <ul className={'navBarUL navBarNav navBarULRight'}>
                 {headerLinks.map((link, key) => {
                   if(link.link !== '' && link.text !== '') {
+                    // internal links get a <Link/>
+                    if (link.link.charAt(0) === '/') {
+                      return (
+                        <li key={key}>
+                          <Link className="sidebarLink" to={link.link}>{link.text}</Link>
+                        </li>
+                      )
+                    }
+
                     return(
                       <li key={key}>
                         <a className="sidebarLink" href={link.link} target="_blank" rel="noopener" dangerouslySetInnerHTML={{__html: link.text}} />

@@ -1,18 +1,22 @@
+// config for all the things
 const config = {
 	"gatsby": {
 		"pathPrefix": "/",
-		"siteUrl": "https://learn.hasura.io",
+		"siteUrl": "https://qri.io",
 		"gaTrackingId": null
 	},
 	"header": {
-		"logo": "https://graphql-engine-cdn.hasura.io/learn-hasura/assets/homepage/favicon.png",
-		"logoLink": "https://learn.hasura.io",
-		"title": "Gatsby Gitbook Boilerplate",
-		"githubUrl": "https://github.com/hasura/gatsby-gitbook-boilerplate",
+		"logo": "https://qri.cloud/assets/qri-blob-logo-tiny.png",
+		"logoLink": "/",
+		"title": "qri",
+		"githubUrl": '',
 		"helpUrl": "",
 		"tweetText": "",
 		"links": [
-			{ "text": "", "link": ""}
+			{ "text": "About", "link": "/about"},
+			{ "text": "Blog", "link": "/"},
+			{ "text": "Docs", "link": "/docs"},
+			{ "text": "Download", "link": "/download"}
 		],
 		"search": {
 			"enabled": false,
@@ -23,24 +27,29 @@ const config = {
 		}
 	},
 	"sidebar": {
+		// modified from original config, this is now only for ordering top-level groups
 		"forcedNavOrder": [
-			"/introduction",
-    		"/codeblock"
+			'getting-started',
+			'dataset-components',
+			'working-with-datasets',
+			'tutorials',
+			'integrating-qri',
+			'qri-desktop-manual',
+			'qri-cli-manual',
+			'developers',
+			'reference'
 		],
-    	"collapsedNav": [
-      		"/codeblock"
-    	],
 		"links": [
-			{ "text": "Hasura", "link": "https://hasura.io"},
+			// { "text": "", "link": ""},
 		],
 		"frontline": false,
 		"ignoreIndex": true,
 	},
 	"siteMetadata": {
-		"title": "Gatsby Gitbook Boilerplate | Hasura",
-		"description": "Documentation built with mdx. Powering learn.hasura.io ",
+		"title": "Qri.io",
+		"description": "Qri Website and Documentation",
 		"ogImage": null,
-		"docsLocation": "https://github.com/hasura/gatsby-gitbook-boilerplate/tree/master/content",
+		"docsLocation": "https://github.com/qri-io/website-refresh/tree/master/docs",
 		"favicon": "https://graphql-engine-cdn.hasura.io/img/hasura_icon_black.svg"
 	},
 	"pwa": {
