@@ -17,7 +17,7 @@ Choose a good username, it will be used to reference each of your datasets on th
 
 ## Create your first Qri Dataset
 
-To create your first dataset, start with a CSV.  If you don’t have one handy you can use [dataset of all earthquakes in the last week](https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.csv) from the U.S. Geological Survey.  Drag and drop the CSV into Qri Desktop to kick off the import.  
+To create your first dataset, start with a CSV.  If you don’t have one handy you can use this [dataset of all earthquakes in the last week](https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.csv) from the U.S. Geological Survey.  Drag and drop the CSV into Qri Desktop to kick off the import.  
 
 🖥
 
