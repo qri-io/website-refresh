@@ -2,16 +2,35 @@
 title: "Body"
 metaTitle: ""
 metaDescription: ""
+weight: 2
 ---
 
+🖼 Dataset Components Header
 
+## Overview
 
+A Qri dataset's Body is *the data itself*.  It's the rows and columns of values that came from a CSV file, and now live in a Qri dataset along with other components.
 
-## Here's an h2
+Think about the body as a *single table* of data, and the other components as information that complements the body.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum nibh quis neque pretium, in dignissim neque sagittis. Vestibulum in metus vehicula, sagittis mi sed, tristique erat. Mauris bibendum dictum quam, ut facilisis ante mollis ac. Quisque nec tincidunt enim, non bibendum ante. Morbi lobortis imperdiet dui. Sed tempus feugiat nibh vitae feugiat. Pellentesque ornare tincidunt nunc in semper. Quisque venenatis dui ut risus luctus, eget tincidunt nulla dictum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi finibus faucibus consequat.
+## Body is Required
 
-* Nunc neque sem, egestas quis eleifend vitae, vehicula nec leo. Nam nec risus vitae risus euismod bibendum quis ac eros.
-* Sed sodales semper gravida. Aliquam vel lacus lectus. Praesent ac rutrum turpis, vel dignissim sem. Quisque dapibus metus pharetra, gravida ligula eget, volutpat libero.
-* Cras eget risus posuere, commodo libero quis, faucibus leo.
-* Maecenas non fermentum nisl. Sed sagittis ex nec nisi tincidunt, vitae vestibulum diam consequat.
+Body is a required component, a Qri Dataset cannot exist without a body.
+
+## Relationship to Structure
+
+Body is closely linked to the [structure](/docs/dataset-components/structure) component, which stores information about column types, validation rules, and more.
+
+Qri depends on structure to be able to interpret the body.  If you create a dataset from a CSV, the structure is inferred on import.  
+
+## Constraints
+
+Body is the component of a Qri Dataset that can get __BIG__.  Qri is intended for use with datasets whose body component is less than 1GB in size.  Qri uses pagination to load small sections of the body on demand.  
+
+The body may contain invalid data.  For example, the structure component may define a column as numeric, but some of the column's values in the body contain text.  Qri can be configured to enforce validity when committing changes using strict mode.
+
+Bodies may not contain corrupt data.  
+
+## Other Body Formats
+
+Qri Desktop is optimized for CSV bodies, but Qri's underlying technology can handle other formats, including json, xlsx, and cbor.
