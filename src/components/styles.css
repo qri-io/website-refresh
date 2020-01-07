@@ -995,7 +995,7 @@ h2 {
 
 /* based on https://render.com/docs/configure-cloudflare-dns */
 
-div[class$="-block"] {
+.info-block {
   margin-top: 12px;
   margin-bottom: 12px;
   padding: 12px 12px 12px 40px;
@@ -1007,16 +1007,28 @@ div[class$="-block"] {
   background-repeat: no-repeat;
   color: rgba(39,41,56,0.8);
   line-height: 1.6rem;
+  position: relative;
 }
 
-.info-block {
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd…AsMSwuNzQuNzgsMiwyLDAsMCwxLDAsLjgxLjkxLjkxLDAsMCwxLS44Ny43NVoiLz48L3N2Zz4=);
+.info-block.info {
   border-color: rgba(67,81,232,0.1);
   background-color: rgba(79,101,241,0.05);
 }
 
-.warning-block {
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd…AsMSwuNzQuNzgsMiwyLDAsMCwxLDAsLjgxLjkxLjkxLDAsMCwxLS44Ny43NVoiLz48L3N2Zz4=);
+.info-block.info svg {
+  color: rgba(67, 81, 232, 0.53);
+}
+
+.info-block.warning {
   border-color: rgba(255,193,93,0.5);
   background-color: rgba(255,193,93,0.08);
+}
+
+.info-block.warning svg {
+  color: rgba(255, 193, 93, 0.74);
+}
+
+.info-block-icon {
+  left: 13px;
+  position: absolute;
 }

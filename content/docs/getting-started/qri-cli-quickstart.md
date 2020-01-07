@@ -4,12 +4,14 @@ metaTitle: "Qri CLI Quickstart"
 metaDescription: "Getting started with Qri's Command Line Interface. Qri is a distributed dataset version control and sharing system"
 ---
 
+import InfoBlock from '../../../src/components/InfoBlock.js'
+
 Follow these steps to get started with Qri’s Command Line Interface.  To see the same workflow using a GUI, see [Qri Desktop Quickstart](/docs/getting-started/qri-desktop-quickstart)
 
-<div class="info-block">
+<InfoBlock>
   All Qri CLI commands have built-in help documentation available with
   <span class='inline-code'>qri [command] --help</span>
-</div>
+</InfoBlock>
 
 ## Install the Qri Binary
 
@@ -228,9 +230,9 @@ You can continue making changes this way, committing new versions whenever you r
 
 ## Publish to Qri Cloud
 
-<div class="warning-block">
+<InfoBlock type='warning'>
   Qri Cloud is currently in alpha status and is experimental.  All data on Qri Cloud is public. Be careful when publishing your dataset.
-</div>
+</InfoBlock>
 
 
 Qri Cloud allows you to share your Qri Datasets publicly.  Use `qri publish` to push your dataset versions to the cloud.
