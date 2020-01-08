@@ -1,17 +1,29 @@
 ---
 title: "Meta"
-metaTitle: ""
-metaDescription: ""
+metaTitle: "The Qri Meta Component"
+metaDescription: "The __meta__ component contains human-readable descriptive metadata that qualifies and distinguishes a dataset."
+weight: 4
 ---
 
+import InfoBlock from '../../../src/components/InfoBlock.js'
 
 
+🖼 Dataset Components Header
 
-## Here's an h2
+## Overview
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum nibh quis neque pretium, in dignissim neque sagittis. Vestibulum in metus vehicula, sagittis mi sed, tristique erat. Mauris bibendum dictum quam, ut facilisis ante mollis ac. Quisque nec tincidunt enim, non bibendum ante. Morbi lobortis imperdiet dui. Sed tempus feugiat nibh vitae feugiat. Pellentesque ornare tincidunt nunc in semper. Quisque venenatis dui ut risus luctus, eget tincidunt nulla dictum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi finibus faucibus consequat.
+The __meta__ component contains human-readable descriptive metadata that qualifies and distinguishes a dataset.
 
-* Nunc neque sem, egestas quis eleifend vitae, vehicula nec leo. Nam nec risus vitae risus euismod bibendum quis ac eros.
-* Sed sodales semper gravida. Aliquam vel lacus lectus. Praesent ac rutrum turpis, vel dignissim sem. Quisque dapibus metus pharetra, gravida ligula eget, volutpat libero.
-* Cras eget risus posuere, commodo libero quis, faucibus leo.
-* Maecenas non fermentum nisl. Sed sagittis ex nec nisi tincidunt, vitae vestibulum diam consequat.
+Well-defined meta should aid in making datasets findable by describing a dataset in generalizable taxonomies that can aggregate across other datasets.
+
+Because datasets are intended to interoperate with many other data storage and cataloging systems, meta fields and conventions are derived from existing metadata formats whenever possible.
+
+## Meta in Qri Desktop
+
+You can edit a dataset's meta component in Qri Desktop.  Navigate to the Dataset Pane, then click the meta tab under status.  You can fill out the meta form, and Qri will track your changes.
+
+## Meta in Qri CLI
+
+<InfoBlock>
+  See <a href="/docs/reference/dataset-specification/">Dataset Specification</a> for detailed documentation of Qri dataset components.
+</InfoBlock>

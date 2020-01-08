@@ -1,17 +1,28 @@
 ---
 title: "Structure"
-metaTitle: ""
-metaDescription: ""
+metaTitle: "The Qri Structure Component"
+metaDescription: "The structure component defines the characteristics of a dataset document necessary for a machine to interpret the dataset body"
+weight: 5
 ---
 
+import InfoBlock from '../../../src/components/InfoBlock.js'
 
 
+## Overview
+The __structure__ component defines the characteristics of a dataset document necessary for a machine to interpret the dataset [body](/docs/dataset-components/body).
 
-## Here's an h2
+Structure includes things like the encoding data format (JSON,CSV,etc.), length of the dataset body in bytes, etc, and is stored in a rigid form intended for machine use. A well defined structure & accompanying software should allow the end user to spend more time focusing on the data itself.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce interdum nibh quis neque pretium, in dignissim neque sagittis. Vestibulum in metus vehicula, sagittis mi sed, tristique erat. Mauris bibendum dictum quam, ut facilisis ante mollis ac. Quisque nec tincidunt enim, non bibendum ante. Morbi lobortis imperdiet dui. Sed tempus feugiat nibh vitae feugiat. Pellentesque ornare tincidunt nunc in semper. Quisque venenatis dui ut risus luctus, eget tincidunt nulla dictum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi finibus faucibus consequat.
+## Schema
 
-* Nunc neque sem, egestas quis eleifend vitae, vehicula nec leo. Nam nec risus vitae risus euismod bibendum quis ac eros.
-* Sed sodales semper gravida. Aliquam vel lacus lectus. Praesent ac rutrum turpis, vel dignissim sem. Quisque dapibus metus pharetra, gravida ligula eget, volutpat libero.
-* Cras eget risus posuere, commodo libero quis, faucibus leo.
-* Maecenas non fermentum nisl. Sed sagittis ex nec nisi tincidunt, vitae vestibulum diam consequat.
+The structure component contains a property named `schema`, which is a [JSONSchema](https://json-schema.org/) document used to describe the body.  For a CSV, schema contains information such as column names, column types, acceptable ranges of values, etc.  
+
+Schemas are useful for validation of Qri datasets.  Users can apply rules in the schema and Qri will report back on invalid values.  Applying "strict mode" to commits will prevent the creation of new versions with an invalid body.
+
+## Structure in Qri Desktop
+
+## Structure in Qri CLI
+
+<InfoBlock>
+  See <a href="/docs/reference/dataset-specification/">Dataset Specification</a> for detailed documentation of Qri dataset components.
+</InfoBlock>
