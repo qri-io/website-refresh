@@ -50,9 +50,9 @@ First, create an empty directory on your filesystem to store the dataset's worki
 mkdir ~/datasets/usgs_earthquakes
 ```
 
-<div class="info-block">
+<InfoBlock>
   Qri recommends creating a <span class='inline-code'>/datasets</span> parent directory to store your datasets' working directories.
-</div>
+</InfoBlock>
 
 
 Navigate to your empty dataset directory and run `qri init` with the `--source-body-path` flag to import your CSV and create a new dataset.  Qri will ask you to name your dataset.  The dataset name may consist only of lowercase letters, numbers, and underscores/hyphens, and must be 100 characters or fewer. See [Naming Datasets](/docs/working-with-datasets) for more on Qri naming conventions.
@@ -231,7 +231,7 @@ You can continue making changes this way, committing new versions whenever you r
 ## Publish to Qri Cloud
 
 <InfoBlock type='warning'>
-  Qri Cloud is currently in alpha status and is experimental.  All data on Qri Cloud is public. Be careful when publishing your dataset.
+  Qri Cloud is currently in alpha status and is experimental.  All data on Qri Cloud is public. Be careful when publishing your datasets.
 </InfoBlock>
 
 

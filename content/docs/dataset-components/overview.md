@@ -1,13 +1,15 @@
 ---
-title: "Dataset Components"
-metaTitle: ""
-metaDescription: ""
+title: "Components Overview"
+metaTitle: "Overview of Qri Dataset Components"
+metaDescription: "Qri defines a __dataset__ as a set of _components_, each with its own format and requirements."
 weight: 1
 ---
 
-A Qri dataset is everything you *wish* you had when you download a CSV. Qri defines a __dataset__ as a set of _components_, each with its own format and requirements.
+import InfoBlock from '../../../src/components/InfoBlock.js'
 
-For example, a CSV of tabular data, structured metadata, and a markdown readme can all live together under a single Qri dataset.  A change to any individual component constitutes a new version of the collective dataset.
+Qri defines a __dataset__ as a set of _components_, each with its own format and requirements.  
+
+For example, a CSV of tabular data, structured metadata, and a markdown readme can all live together under a single Qri dataset.  A change to any individual component constitutes a new version of the collective dataset. A Qri dataset contains everything you *wish* you had when you download a CSV from the internet:
 
 <div id="dataset_components">
   <div class="left descriptions">
@@ -44,3 +46,7 @@ For example, a CSV of tabular data, structured metadata, and a markdown readme c
     </a>
   </div>
 </div>
+
+<InfoBlock>
+  See <a href="/docs/reference/dataset-specification/">Dataset Specification</a> for detailed documentation of Qri dataset components.
+</InfoBlock>
