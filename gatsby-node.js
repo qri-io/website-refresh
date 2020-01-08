@@ -34,9 +34,10 @@ exports.createPages = ({ graphql, actions }) => {
         result.data.allMdx.edges.forEach(({ node }) => {
           createPage({
             path: node.fields.slug ? node.fields.slug : "/",
-            component: path.resolve("./src/templates/docs.js"),
+            component: path.resolve("./src/layouts/docs.js"),
             context: {
-              id: node.fields.id
+              id: node.fields.id,
+              layout: 'docs'
             }
           });
         });
@@ -49,7 +50,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       modules: [path.resolve(__dirname, "src"), "node_modules"],
-      alias: { 
+      alias: {
         $components: path.resolve(__dirname, "src/components"),
         buble: '@philpl/buble' // to reduce bundle size
       }
@@ -90,6 +91,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       name: "title",
       node,
       value: node.frontmatter.title || startCase(parent.name)
+    });
+
+    createNodeField({
+      name: "weight",
+      node,
+      value: node.frontmatter.weight
     });
   }
 };

@@ -17,26 +17,44 @@ const TreeNode = ({className = '', setCollapsed, collapsed, url, title, items, .
   const active =
     location && (location.pathname === url || location.pathname === (config.gatsby.pathPrefix + url));
   const calculatedClassName = `${className} item ${active ? 'active' : ''}`;
+
+  let titleContent
+
+
+  if (title) {
+    titleContent = (
+      <>
+        {title}
+        {/* !config.sidebar.frontLine && title && hasChildren ? (
+          <button
+            onClick={collapse}
+            aria-label='collapse'
+            className='collapser'>
+            {!isCollapsed ? <OpenedSvg /> : <ClosedSvg />}
+          </button>
+        ) : null */}
+      </>
+    )
+  }
+
+  if (url) {
+    titleContent = (
+      <Link to={url}>
+        {titleContent}
+      </Link>
+    )
+  } else {
+    titleContent = (
+      <div className='section-header'>
+        {titleContent}
+      </div>
+    )
+  }
   return (
     <li
       className={calculatedClassName}
     >
-      {title && (
-        <Link
-          to={url}
-        >
-          {title}
-          {!config.sidebar.frontLine && title && hasChildren ? (
-            <button
-              onClick={collapse}
-              aria-label='collapse'
-              className='collapser'>
-              {!isCollapsed ? <OpenedSvg /> : <ClosedSvg />}
-            </button>
-          ) : null}
-        </Link>)
-      }
-
+      {titleContent}
       {!isCollapsed && hasChildren ? (
         <ul>
           {items.map((item) => (

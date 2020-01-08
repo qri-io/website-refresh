@@ -3,7 +3,7 @@ import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer";
 import styled from "@emotion/styled";
-import { Layout, Link } from "$components";
+import { DocsColumns, Link } from "$components";
 import NextPrevious from '../components/NextPrevious';
 import '../components/styles.css';
 import config from '../../config';
@@ -95,7 +95,7 @@ export default class MDXRuntimeTest extends Component {
     canonicalUrl = canonicalUrl + mdx.fields.slug;
 
     return (
-      <Layout {...this.props}>
+      <DocsColumns {...this.props}>
         <Helmet>
           {metaTitle ? <title>{metaTitle}</title> : null }
           {metaTitle ? <meta name="title" content={metaTitle} /> : null}
@@ -119,10 +119,7 @@ export default class MDXRuntimeTest extends Component {
         <div className={'mainWrapper'}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </div>
-        <div className={'addPaddTopBottom'}>
-          <NextPrevious mdx={mdx} nav={nav} />
-        </div>
-      </Layout>
+      </DocsColumns>
     );
   }
 }

@@ -2,9 +2,55 @@ import React, {useState} from 'react';
 import config from '../../../config';
 import TreeNode from './treeNode';
 
+const capitalize = (input) => {
+  return input.replace(/-/g,' ').toUpperCase()
+};
+
+/**
+ * Sort array of objects based on another array
+ */
+
+const sortGroups = (tree, order) => {
+  const { items } = tree.items[0]
+  items.sort((a, b) => {
+    const aLabel = a['label']
+    const bLabel = b['label']
+    const aIndex = order.indexOf(aLabel)
+    const bIndex = order.indexOf(bLabel)
+
+    // if not comparing two values not in the ordering array, sort alphabetically
+    if (aIndex === -1 && bIndex === -1) return (aLabel > bLabel) ? 1 : -1
+    // if one is not in the array, push it to the end
+    if (aIndex === -1 || bIndex === -1) return (aIndex === -1) ? 1 : -1
+    // otherwise, sort by key location
+    return (aIndex > bIndex) ? 1 : -1
+  });
+
+  return tree;
+};
+
+const sortEntries = (tree) => {
+  tree.items[0].items.forEach(({ items }) => {
+    items.sort((a, b) => {
+      const aLabel = a['label']
+      const bLabel = b['label']
+      const aWeight = a['weight']
+      const bWeight = b['weight']
+
+      // if neither item has weight, sort alphabetically
+      if (!aWeight && !bWeight) return (aLabel > bLabel) ? 1 : -1
+      // if only one has weight, push it to the beginning
+      if (!aWeight || !bWeight) return (bWeight) ? 1 : -1
+      // sort by weight
+      return (aWeight > bWeight) ? 1 : -1
+    })
+  })
+  return tree
+}
+
 const calculateTreeData = edges => {
   const originalData = config.sidebar.ignoreIndex ? edges.filter(({node: {fields: {slug}}}) => slug !== '/') : edges;
-  const tree = originalData.reduce((accu, {node: {fields: {slug, title}}}) => {
+  let tree = originalData.reduce((accu, {node: {fields: {slug, title, weight}}}) => {
     const parts = slug.split('/');
     let {items: prevItems} = accu;
     for (const part of parts.slice(1, -1)) {
@@ -14,7 +60,8 @@ const calculateTreeData = edges => {
           tmp.items = [];
         }
       } else {
-        tmp = {label: part, items: []};
+        // here we create title for top-level categories
+        tmp = {label: part, items: [], title: capitalize(part)};
         prevItems.push(tmp)
       }
       prevItems = tmp.items;
@@ -28,44 +75,21 @@ const calculateTreeData = edges => {
         label: parts[parts.length - 1],
         url: slug,
         items: [],
+        weight,
         title
       });
     }
     return accu;
   }, {items: []});
+
   const {sidebar: {forcedNavOrder = []}} = config;
-  const tmp = [...forcedNavOrder];
-  tmp.reverse();
-  return tmp.reduce((accu, slug) => {
-    const parts = slug.split('/');
-    let {items: prevItems} = accu;
-    for (const part of parts.slice(1, -1)) {
-      let tmp = prevItems.find(({label}) => label == part);
-      if (tmp) {
-        if (!tmp.items) {
-          tmp.items = [];
-        }
-      } else {
-        tmp = {label: part, items: []};
-        prevItems.push(tmp)
-      }
-      prevItems = tmp.items;
-    }
-    // sort items alphabetically.
-    prevItems.map((item) => {
-      item.items = item.items
-        .sort(function (a, b) {
-          if (a.label < b.label)
-            return -1;
-          if (a.label > b.label)
-            return 1;
-          return 0;
-        });
-    })
-    const index = prevItems.findIndex(({label}) => label === parts[parts.length - 1]);
-    accu.items.unshift(prevItems.splice(index, 1)[0]);
-    return accu;
-  }, tree);
+
+  // sort groups by order specified in config.sidebar.forcedNavOrder
+  tree = sortGroups(tree, forcedNavOrder, 'label')
+  // sort the entries within group based on weight frontmatter
+  tree = sortEntries(tree)
+
+  return tree
 }
 
 
@@ -73,6 +97,7 @@ const Tree = ({edges}) => {
   const [treeData] = useState(() => {
     return calculateTreeData(edges);
   });
+
   const defaultCollapsed = {};
   treeData.items.forEach(item => {
     if (config.sidebar.collapsedNav && config.sidebar.collapsedNav.includes(item.url)) {
@@ -89,12 +114,18 @@ const Tree = ({edges}) => {
     });
   }
   return (
-    <TreeNode
-      className={`${config.sidebar.frontLine ? 'showFrontLine' : 'hideFrontLine'} firstLevel`}
-      setCollapsed={toggle}
-      collapsed={collapsed}
-      {...treeData}
-    />
+    <>
+    {treeData.items[0].items.map((item, i) => (
+      <TreeNode
+        key={i}
+        className={`${config.sidebar.frontLine ? 'showFrontLine' : 'hideFrontLine'} firstLevel`}
+        setCollapsed={toggle}
+        collapsed={false}
+        {...item}
+      />
+    ))}
+
+    </>
   );
 }
 
