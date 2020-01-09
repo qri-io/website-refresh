@@ -1,9 +1,9 @@
-import React from "react"
-import PropTypes from "prop-types"
-import config from "../config";
+import React from 'react'
+import PropTypes from 'prop-types'
+import config from '../config'
 
 export default class HTML extends React.Component {
-  render() {
+  render () {
     return (
       <html {...this.props.htmlAttributes} lang="en">
         <head>
@@ -13,15 +13,15 @@ export default class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          {config.siteMetadata.ogImage ?
-            (<meta property="og:image" content={config.siteMetadata.ogImage} />) : null
+          {config.siteMetadata.ogImage
+            ? (<meta property="og:image" content={config.siteMetadata.ogImage} />) : null
           }
           <meta property="twitter:card" content="summary_large_image" />
-          {config.siteMetadata.ogImage ?
-            (<meta property="twitter:image" content={config.siteMetadata.ogImage} />) : null
+          {config.siteMetadata.ogImage
+            ? (<meta property="twitter:image" content={config.siteMetadata.ogImage} />) : null
           }
-          {config.siteMetadata.favicon ?
-            (<link rel="shortcut icon" type="image/svg" href={config.siteMetadata.favicon} />) : null
+          {config.siteMetadata.favicon
+            ? (<link rel="shortcut icon" type="image/svg" href={config.siteMetadata.favicon} />) : null
           }
           <noscript key="noscript"></noscript>
           {this.props.headComponents}
@@ -29,15 +29,15 @@ export default class HTML extends React.Component {
         <body {...this.props.bodyAttributes}>
           {this.props.preBodyComponents}
           <div
-            key={`body`}
+            key={'body'}
             id="___gatsby"
             dangerouslySetInnerHTML={{ __html: this.props.body }}
           />
           {this.props.postBodyComponents}
           <script
-          defer
-          dangerouslySetInnerHTML={{
-            __html: `
+            defer
+            dangerouslySetInnerHTML={{
+              __html: `
             function navBarClose() {
               document.getElementById("navbar").classList.remove("responsive");
             }
@@ -47,7 +47,7 @@ export default class HTML extends React.Component {
               }
            });
             `
-          }}
+            }}
           />
         </body>
       </html>
@@ -61,5 +61,5 @@ HTML.propTypes = {
   bodyAttributes: PropTypes.object,
   preBodyComponents: PropTypes.array,
   body: PropTypes.string,
-  postBodyComponents: PropTypes.array,
+  postBodyComponents: PropTypes.array
 }

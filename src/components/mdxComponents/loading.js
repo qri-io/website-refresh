@@ -1,9 +1,9 @@
-import * as React from "react";
+import * as React from 'react'
 
 const LoadingProvider = ({ ...props }) => {
   return (
-  	<div></div>
-  );
-};
+    <div></div>
+  )
+}
 
-export default LoadingProvider;
+export default LoadingProvider

@@ -1,14 +1,13 @@
-import React from 'react';
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInfoCircle, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
 
-const InfoBlock = ({ type = 'info', children}) => {
-
+const InfoBlock = ({ type = 'info', children }) => {
   let icon
-  switch(type) {
+  switch (type) {
     case 'warning':
       icon = faExclamationTriangle
-      break;
+      break
     default:
       icon = faInfoCircle
   }
@@ -23,4 +22,4 @@ const InfoBlock = ({ type = 'info', children}) => {
   )
 }
 
-export default InfoBlock;
+export default InfoBlock

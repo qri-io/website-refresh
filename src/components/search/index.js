@@ -1,30 +1,22 @@
-import React, { useState, useEffect, createRef } from "react";
+import React, { useState, useEffect, createRef } from 'react'
 import {
   InstantSearch,
   Index,
   Hits,
   Configure,
-  Pagination,
-  connectStateResults,
-} from "react-instantsearch-dom";
-import algoliasearch from "algoliasearch/lite";
-import config from "../../../config.js";
+  connectStateResults
+} from 'react-instantsearch-dom'
+import algoliasearch from 'algoliasearch/lite'
+import config from '../../../config.js'
 
-import styled from "@emotion/styled";
-import { css } from "@emotion/core";
-import { PoweredBy } from "./styles"
-import { Search } from "styled-icons/fa-solid/Search"
-import Input from "./input"
-import * as hitComps from "./hitComps"
-import '../styles.css';
-
-const SearchIcon = styled(Search)`
-  width: 1em;
-  pointer-events: none;
-`;
+import styled from '@emotion/styled'
+import { PoweredBy } from './styles'
+import Input from './input'
+import * as hitComps from './hitComps'
+import '../styles.css'
 
 const HitsWrapper = styled.div`
-  display: ${props => (props.show ? `grid` : `none`)};
+  display: ${props => (props.show ? 'grid' : 'none')};
   max-height: 80vh;
   overflow: scroll;
   z-index: 2;
@@ -98,34 +90,32 @@ const Root = styled.div`
 
 const Results = connectStateResults(
   ({ searching, searchState: state, searchResults: res }) =>
-    (searching && `Searching...`) ||
+    (searching && 'Searching...') ||
     (res && res.nbHits === 0 && `No results for '${state.query}'`)
 )
 
 const useClickOutside = (ref, handler, events) => {
-  if (!events) events = [`mousedown`, `touchstart`]
+  if (!events) events = ['mousedown', 'touchstart']
   const detectClickOutside = event =>
     ref && ref.current && !ref.current.contains(event.target) && handler()
   useEffect(() => {
-    for (const event of events)
-      document.addEventListener(event, detectClickOutside)
+    for (const event of events) { document.addEventListener(event, detectClickOutside) }
     return () => {
-      for (const event of events)
-        document.removeEventListener(event, detectClickOutside)
+      for (const event of events) { document.removeEventListener(event, detectClickOutside) }
     }
   })
 }
 
-export default function SearchComponent({ indices, collapse, hitsAsGrid }) {
+export default function SearchComponent ({ indices, collapse, hitsAsGrid }) {
   const ref = createRef()
-  const [query, setQuery] = useState(``)
+  const [query, setQuery] = useState('')
   const [focus, setFocus] = useState(false)
   const searchClient = algoliasearch(
     config.header.search.algoliaAppId,
     config.header.search.algoliaSearchKey
   )
   useClickOutside(ref, () => setFocus(false))
-  const displayResult = (query.length > 0 && focus) ? 'showResults' : 'hideResults';
+  const displayResult = (query.length > 0 && focus) ? 'showResults' : 'hideResults'
   return (
     <InstantSearch
       searchClient={searchClient}
@@ -141,7 +131,8 @@ export default function SearchComponent({ indices, collapse, hitsAsGrid }) {
               <Results />
               <Hits hitComponent={hitComps[hitComp](() => setFocus(false))} />
             </Index>
-          )})}
+          )
+        })}
         <PoweredBy />
       </HitsWrapper>
       <Configure hitsPerPage={5} />

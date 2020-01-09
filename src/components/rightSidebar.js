@@ -1,11 +1,8 @@
-import React from "react";
-import { StaticQuery, graphql } from "gatsby";
-import styled from "@emotion/styled";
-import Link from "./link";
-import './styles.css';
-import config from '../../config';
-
-const forcedNavOrder = config.sidebar.forcedNavOrder;
+import React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
+import styled from '@emotion/styled'
+import './styles.css'
+import config from '../../config'
 
 const Sidebar = styled('aside')`
   width: 100%;
@@ -23,15 +20,15 @@ const Sidebar = styled('aside')`
     width: 100%;
     position: relative;
   }
-`;
+`
 
 // eslint-disable-next-line no-unused-vars
 const ListItem = styled(({ className, active, level, ...props }) => {
-    return (
-      <li className={className}>
-        <a href={props.to} {...props} />
-      </li>
-    );
+  return (
+    <li className={className}>
+      <a href={props.to} {...props} />
+    </li>
+  )
 })`
   list-style: none;
 
@@ -61,7 +58,7 @@ const ListItem = styled(({ className, active, level, ...props }) => {
       margin-right: 1rem;
     }
   }
-`;
+`
 
 const SidebarLayout = ({ location }) => (
   <StaticQuery
@@ -80,12 +77,11 @@ const SidebarLayout = ({ location }) => (
       }
     `}
     render={({ allMdx }) => {
-      let navItems = [];
-      let finalNavItems;
+      let finalNavItems
       if (allMdx.edges !== undefined && allMdx.edges.length > 0) {
-        const navItems = allMdx.edges.map((item, index) => {
-          let innerItems;
-          if(item !== undefined) {
+        allMdx.edges.map((item, index) => {
+          let innerItems
+          if (item !== undefined) {
             if ((item.node.fields.slug === location.pathname) || (config.gatsby.pathPrefix + item.node.fields.slug) === location.pathname) {
               if (item.node.tableOfContents.items) {
                 innerItems = item.node.tableOfContents.items.map((innerItem, index) => {
@@ -98,15 +94,15 @@ const SidebarLayout = ({ location }) => (
                     >
                       {title}
                     </ListItem>
-                  );
-                });
+                  )
+                })
               }
             }
           }
           if (innerItems) {
-            finalNavItems = innerItems;
+            finalNavItems = innerItems
           }
-        });
+        })
       }
 
       if (finalNavItems && finalNavItems.length) {
@@ -117,16 +113,16 @@ const SidebarLayout = ({ location }) => (
               {finalNavItems}
             </ul>
           </Sidebar>
-        );
+        )
       } else {
         return (
           <Sidebar>
             <ul></ul>
           </Sidebar>
-        );
+        )
       }
     }}
   />
-);
+)
 
-export default SidebarLayout;
+export default SidebarLayout

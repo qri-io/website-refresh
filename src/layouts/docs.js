@@ -1,14 +1,12 @@
-import React, { Component } from "react";
-import Helmet from "react-helmet";
-import { graphql } from "gatsby";
-import MDXRenderer from "gatsby-plugin-mdx/mdx-renderer";
-import styled from "@emotion/styled";
-import { DocsColumns, Link } from "$components";
-import NextPrevious from '../components/NextPrevious';
-import '../components/styles.css';
-import config from '../../config';
-
-const forcedNavOrder = config.sidebar.forcedNavOrder;
+import React, { Component } from 'react'
+import Helmet from 'react-helmet'
+import { graphql, Link } from 'gatsby'
+import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
+import styled from '@emotion/styled'
+import DocsColumns from '../components/docs-columns'
+// import NextPrevious from '../components/NextPrevious'
+import '../components/styles.css'
+import config from '../../config'
 
 const Edit = styled('div')`
   padding: 1rem 1.5rem;
@@ -34,65 +32,28 @@ const Edit = styled('div')`
       background-color: rgb(245, 247, 249);
     }
   }
-`;
+`
 
 export default class MDXRuntimeTest extends Component {
-  render() {
-    const { data } = this.props;
-    if(!data) {
-      return null;
+  render () {
+    const { data } = this.props
+    if (!data) {
+      return null
     }
     const {
-      allMdx,
       mdx,
       site: {
         siteMetadata: { docsLocation, title }
       }
-    } = data;
-    const gitHub = require('../components/images/github.svg');
-
-    const navItems = allMdx.edges
-      .map(({ node }) => node.fields.slug)
-      .filter(slug => slug !== "/")
-      .sort()
-      .reduce(
-        (acc, cur) => {
-          if (forcedNavOrder.find(url => url === cur)) {
-            return { ...acc, [cur]: [cur] };
-          }
-
-          const prefix = cur.split("/")[1];
-
-          if (prefix && forcedNavOrder.find(url => url === `/${prefix}`)) {
-            return { ...acc, [`/${prefix}`]: [...acc[`/${prefix}`], cur] };
-          } else {
-            return { ...acc, items: [...acc.items, cur] };
-          }
-        },
-        { items: [] }
-      );
-
-    const nav = forcedNavOrder
-      .reduce((acc, cur) => {
-        return acc.concat(navItems[cur]);
-      }, [])
-      .concat(navItems.items)
-      .map(slug => {
-        if(slug) {
-          const { node } = allMdx.edges.find(
-            ({ node }) => node.fields.slug === slug
-          );
-
-          return { title: node.fields.title, url: node.fields.slug };
-        }
-      });
+    } = data
+    const gitHub = require('../components/images/github.svg')
 
     // meta tags
-    const metaTitle = mdx.frontmatter.metaTitle;
-    const metaDescription = mdx.frontmatter.metaDescription;
-    let canonicalUrl = config.gatsby.siteUrl;
-    canonicalUrl = config.gatsby.pathPrefix !== '/' ? canonicalUrl + config.gatsby.pathPrefix : canonicalUrl;
-    canonicalUrl = canonicalUrl + mdx.fields.slug;
+    const metaTitle = mdx.frontmatter.metaTitle
+    const metaDescription = mdx.frontmatter.metaDescription
+    let canonicalUrl = config.gatsby.siteUrl
+    canonicalUrl = config.gatsby.pathPrefix !== '/' ? canonicalUrl + config.gatsby.pathPrefix : canonicalUrl
+    canonicalUrl = canonicalUrl + mdx.fields.slug
 
     return (
       <DocsColumns {...this.props}>
@@ -120,7 +81,7 @@ export default class MDXRuntimeTest extends Component {
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </div>
       </DocsColumns>
-    );
+    )
   }
 }
 
@@ -161,4 +122,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

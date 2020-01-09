@@ -1,12 +1,11 @@
-import React from "react";
+import React from 'react'
 
-import DocsLayout from './docs'
-import StandardLayout from './standard'
-
-export default ({children}) => {
+const StandardLayout = ({ children }) => {
   return (
     <>
       {children}
     </>
   )
 }
+
+export default StandardLayout

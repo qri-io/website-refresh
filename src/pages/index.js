@@ -1,7 +1,5 @@
-import React from "react"
-import { Link } from "gatsby"
-
-import StandardLayout from "../components/standard-layout"
+import React from 'react'
+import { Link } from 'gatsby'
 
 const IndexPage = () => (
   <>

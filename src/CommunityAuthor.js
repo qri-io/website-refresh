@@ -1,9 +1,9 @@
-import React from 'react';
-import './components/styles.css';
+import React from 'react'
+import './components/styles.css'
 
-const CommunityAuthor = ({name, imageUrl, twitterUrl, githubUrl, description}) => {
-    return(
-        <>
+const CommunityAuthor = ({ name, imageUrl, twitterUrl, githubUrl, description }) => {
+  return (
+    <>
         	<h2 className="communitySection">About the community author</h2>
         	<div className="authorSection">
         		<div className="authorImg">
@@ -16,12 +16,12 @@ const CommunityAuthor = ({name, imageUrl, twitterUrl, githubUrl, description}) =
 	        			{githubUrl ? (<a href={githubUrl} target="_blank" rel="noopener"><img src="https://storage.googleapis.com/graphql-engine-cdn.hasura.io/learn-hasura/assets/social-media/github-icon.svg" alt="Github Icon" aria-label="Github" /></a>) : null}
 	        		</div>
 	        		<div className="authorDesc">
-                        {description}
+            {description}
 	        		</div>
         		</div>
         	</div>
-        </>
-    )
-};
+    </>
+  )
+}
 
-export default CommunityAuthor;
+export default CommunityAuthor
