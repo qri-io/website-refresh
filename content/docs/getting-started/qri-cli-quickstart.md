@@ -20,9 +20,20 @@ For `qri` commands to be available in your terminal, you must have the Qri binar
 - [Install a Mac, Windows, or Linux build of Qri](/download)
 - [Build Qri from source](https://github.com/qri-io/qri)
 
-## Setup your username and Qri account
+## Setup your Qri instance
 
-Before you can use qri, you must establish your identity by registering for an account with `qri registry signup`.  Choose a good username, it will be used to reference each of your datasets on the Qri network.  
+Before you can use Qri, you must run `qri setup`.  This sets your cryptographic keys, auto-generates a username, and initializes the Qri environment on your computer.
+
+```
+$ qri setup
+
+choose a peername: [persimmon_cane_corso]:
+set up qri repo at: ~/.qri
+```
+
+## Sign up for a Qri account
+
+While its possible to use Qri without an account, signing up ensures that your username is unique and gives you access to Qri Cloud for one-click data publishing.  Choose a good username, it will be used to reference each of your datasets on the Qri network.  
 
 ```
 $ qri registry signup --username foo --email foo@qri.io --password applesauce
@@ -76,7 +87,25 @@ $qri list
 
 ## Make a Commit
 
-Your new dataset exists, but it doesn't have a version until you save it with `qri save`.
+Your new dataset exists in name only... it doesn't actually contain any any versions until you make your first commit.
+
+Before you commit, try running `qri status` to see what will be committed.
+
+```
+$ qri status
+
+for linked dataset [foo/usgs_earthquakes]
+
+  add: meta (source: meta.json)
+  add: structure (source: structure.json)
+  add: body (source: body.csv)
+
+run `qri save` to commit this dataset
+```
+
+Why are there three components when all you did was specify a CSV for the body?  _structure_ (including schema) is inferred by Qri when you initialize a dataset with a CSV.  _meta_ is just a placeholder component.  This is qri giving you a nudge to add metadata.  A dataset with good metadata is a happy dataset.
+
+Next commit the changes with `qri save`.
 
 ```
 $ qri save
@@ -101,7 +130,7 @@ for linked dataset [foo/usgs_earthquakes]
 
 You can see the timestamp and message of your commit, along with the [ipfs hash](/docs/reference/ipfs) of the version.
 
-You can also inspect the dataset’s [components](/docs/dataset-components/overview) using the CLI.  The automated commit contains both body and structure components.  You can write these to the console using `qri get`:
+You can also inspect the dataset’s [components](/docs/dataset-components/overview) using the CLI.  The version of the dataset you just created contains both body and structure components.  You can write these to the console using `qri get`:
 
 ```bash
 $ qri get body foo/usgs_earthquakes
@@ -174,9 +203,9 @@ Use a text editor to create a `readme.md` file in your dataset's working directo
 
 After saving changes to readme.md in your working directory, qri will be aware of the changes.  Use `qri status` to see the current status of the working directory:
 
-<div class="info-block">
+<InfoBlock>
   To use <span class='inline-code'>qri status</span>, either specify the dataset as an argument __or__ run the command after navigating to the working directory
-</div>
+</InfoBlock>
 
 `qri status`
 

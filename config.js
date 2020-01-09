@@ -14,7 +14,7 @@ const config = {
 		"tweetText": "",
 		"links": [
 			{ "text": "About", "link": "/about"},
-			{ "text": "Blog", "link": "/"},
+			{ "text": "Blog", "link": "https://medium.com/qri-io"},
 			{ "text": "Docs", "link": "/docs"},
 			{ "text": "Download", "link": "/download"}
 		],

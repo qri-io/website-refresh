@@ -12,25 +12,19 @@ import InfoBlock from '../../../src/components/InfoBlock.js'
 
 ## Overview
 
-A Qri dataset's Body is *the data itself*.  It's the rows and columns of values that came from a CSV file, and now live in a Qri dataset along with other components.
-
-Think about the body as a *single table* of data, and the other components as information that complements that table (metadata, structure information, column types and descriptions, etc.)
+The __body__ component is a *single table* of data. The other components of a dataset are information that complements that table (metadata, structure information, column types and descriptions, etc.), but _body_ is the table itself.
 
 Body is a required component, a Qri Dataset cannot exist without a body.
 
 ## Relationship to Structure
 
-Body is closely linked to the [structure](/docs/dataset-components/structure) component, which stores information about column types, validation rules, and more.
-
-Qri depends on structure to be able to interpret the body.  If you create a dataset from a CSV, the structure is inferred on import.  
+Body is closely linked to the [structure](/docs/dataset-components/structure) component, which stores information about column types, validation rules, and more.  Qri depends on structure to be able to interpret the body.  If you create a dataset from a CSV, the structure is inferred on import.  
 
 ## Constraints
 
 Body is the component of a Qri Dataset that can get __BIG__.  Qri is intended for use with datasets whose body component is less than 1GB in size.  Qri uses pagination to load small sections of the body on demand.  
 
 The body may contain invalid data.  For example, the structure component may define a column as numeric, but some of the column's values in the body contain text.  Qri can be configured to enforce validity when committing changes using strict mode.
-
-Bodies may not contain corrupt data.  
 
 ## Non-CSV Bodies
 

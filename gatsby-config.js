@@ -23,6 +23,9 @@ const plugins = [
   {
     resolve: 'gatsby-plugin-mdx',
     options: {
+      defaultLayouts: {
+        docs: require.resolve("./src/layouts/docs.js")
+      },
       gatsbyRemarkPlugins: [
         {
           resolve: "gatsby-remark-images",

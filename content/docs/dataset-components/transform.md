@@ -13,12 +13,17 @@ The __transform__ component allows users to attach scripting to Qri datasets.  T
 
 Qri transforms are written in [Starlark](https://docs.bazel.build/versions/master/skylark/language.html), a programming language similar in syntax to Python3.
 
-## Transforms in Qri Desktop
+## Transform in Qri Desktop
 
-Qri Desktop does not yet support creating, editing, and running transform scripts
+Transforms are currently view-only in Qri Desktop.  Each dataset component has its own tab in Qri Desktop's sidebar.  If a dataset version contains a transform, you can click the transform tab to view it.
 
-## Transforms in Qri CLI
+## Transform in Qri CLI
 
+You can use `qri get` to inspect a dataset's transform, which will write the starlark code to the terminal.
+
+```bash
+$ qri get transform.script b5/world_bank_population
+```
 
 
 <InfoBlock>
