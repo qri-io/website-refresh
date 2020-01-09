@@ -51,7 +51,7 @@ theme:
 title: World Bank Population
 ```
 
-Likewise, you can commit changes to meta using `qri save`
+Likewise, you can commit changes to meta using `qri save` and providing a `meta.json` or `meta.yaml` file.
 
 ```
 // meta.json

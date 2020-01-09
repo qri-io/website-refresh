@@ -79,7 +79,7 @@ Find me on twitter as @some_data_user if you have any questions or want to colla
 ```
 <br/>
 
-Likewise, you can commit changes to readme using `qri save`
+Likewise, you can commit changes to readme using `qri save` and providing a `readme.md` file.
 
 ```markdown
 // readme.md

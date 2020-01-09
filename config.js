@@ -32,11 +32,7 @@ const config = {
 			'getting-started',
 			'dataset-components',
 			'working-with-datasets',
-			'tutorials',
 			'integrating-qri',
-			'qri-desktop-manual',
-			'qri-cli-manual',
-			'developers',
 			'reference'
 		],
 		"links": [

@@ -7,7 +7,7 @@ metaDescription: "This page describes the various notations for referencing a sp
 
 🖥 Screenshot of dataset list in desktop showing datasets from a few different users
 
-This page describes the various notations for referencing a specific dataset on the Qri network.
+What's in a name?  There are several ways of referring to datasets in Qri.  Here are some examples of each.
 
 ## Shorthand Dataset References
 

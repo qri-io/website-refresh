@@ -26,6 +26,34 @@ Body is the component of a Qri Dataset that can get __BIG__.  Qri is intended fo
 
 The body may contain invalid data.  For example, the structure component may define a column as numeric, but some of the column's values in the body contain text.  Qri can be configured to enforce validity when committing changes using strict mode.
 
+## Body in Qri Desktop
+
+Each dataset component has its own tab in Qri Desktop's sidebar.  You can click the body tab to view a table of the body.
+
+## Body in Qri CLI
+
+You can use `qri get` to inspect a dataset's body, which will write the meta to the terminal as yaml.
+
+```bash
+$ qri get body --all foo/simple_csv
+
+foo,bar,baz
+1," one"," true"
+2," two"," false"
+
+```
+
+Likewise, you can commit changes to the body using `qri save` with the `--body` flag
+
+
+```bash
+$ qri save --body simple.csv
+
+using dataset [me/my_dataset]
+
+dataset saved: foo/my_dataset@/ipfs/QmXciFZ7CZj3PfauaXSpKd6amyUpWh4qiPhPGywFbzjhWa
+```
+
 ## Non-CSV Bodies
 
 Qri Desktop is optimized for CSV bodies, but Qri's underlying technology can handle other formats, including json, xlsx, and cbor.
