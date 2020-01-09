@@ -2,8 +2,39 @@ const componentWithMDXScope = require("gatsby-plugin-mdx/component-with-mdx-scop
 const path = require("path");
 const startCase = require("lodash.startcase");
 
+// [ fromPath, toPath ]
+const redirects = [
+  ['/blog/*', 'https://medium.com/qri-io'],
+  ['/blog', 'https://medium.com/qri-io'],
+  ['/desktop', '/download'],
+  ['/desktop/getting-started', '/docs/getting-started/qri-desktop-quickstart'],
+  ['/docs/concepts/content-addressing', '/docs/reference/content-addressing'],
+  ['/docs/concepts/dataset', '/docs/dataset-components/overview'],
+  ['/docs/concepts/ipfs_to_qri', '/docs/reference/ipfs_to_qri'],
+  ['/docs/concepts/overview', '/docs/getting-started/what-is-qri'],
+  ['/docs/concepts/*', '/docs'],
+  ['/docs/concepts', '/docs'],
+  ['/docs/tutorials/cli-quickstart', '/docs/getting-started/qri-cli-quickstart'],
+  ['/docs/tutorials/*', '/docs'],
+  ['/docs/tutorials', '/docs'],
+  ['/docs/reference/starlark_syntax', '/docs/starlark/syntax'],
+  ['/docs/reference/starlark_examples', '/docs/starlark/examples'],
+  ['/docs/reference/starlib', '/docs/starlark/starlib'],
+  ['/docs/reference', '/docs'],
+  ['/docs/workflows', '/docs']
+]
+
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage, createRedirect } = actions;
+
+  // redirects
+  redirects.forEach(([ fromPath, toPath ]) => {
+    createRedirect({
+      fromPath,
+      toPath
+    })
+  })
+
   return new Promise((resolve, reject) => {
     resolve(
       graphql(

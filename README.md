@@ -30,3 +30,7 @@ Group ordering is config-driven using `config.sidebar.forcedNavOrder`
 ### Ordering Documentation Articles
 
 Docs articles will list in alphabetical order by default, but can be ordered manually by specifying a `weight` (number) property in the markdown frontmatter.  Lower weight will be given higher priority
+
+## Redirects
+
+Redirects are defined in `gatsby-node.js`.  The plugin `gatsby-plugin-netlify` generates pages for each redirect during build.

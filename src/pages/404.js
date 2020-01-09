@@ -9,10 +9,10 @@ class NotFoundPage extends React.Component {
     const siteTitle = data.site.siteMetadata.title
 
     return (
-      <StandardLayout location={this.props.location} title={siteTitle}>
+      <>
         <h1>Not Found</h1>
         <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-      </StandardLayout>
+      </>
     )
   }
 }
