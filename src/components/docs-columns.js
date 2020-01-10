@@ -35,11 +35,11 @@ const MaxWidth = styled('div')`
   }
 `
 const LeftSideBarWidth = styled('div')`
-  width: 298px;
+  flex: 0 0 220px;
   overflow: auto;
 `
 const RightSideBarWidth = styled('div')`
-  width: 224px;
+  flex: 0 0 220px;
 `
 const DocsColumns = ({ children, location }) => (
   <MDXProvider components={mdxComponents}>

@@ -4,6 +4,8 @@ import DocsLayout from './docs'
 import StandardLayout from './standard'
 import Header from '../components/Header'
 
+import 'bootstrap/dist/css/bootstrap.css'
+
 // this is the top-level layout, which includes the header and main content area
 // the regular gatsby (jsx) pages will use a standard layout
 // docs pages have context.layout === 'docs' and will use the docs layout with sidebars

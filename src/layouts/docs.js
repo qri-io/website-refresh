@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import MDXRenderer from 'gatsby-plugin-mdx/mdx-renderer'
 import styled from '@emotion/styled'
 import DocsColumns from '../components/docs-columns'
+import ExternalLink from '../components/ExternalLink'
 // import NextPrevious from '../components/NextPrevious'
 import '../components/styles.css'
 import config from '../../config'
@@ -72,9 +73,9 @@ export default class MDXRuntimeTest extends Component {
             {mdx.fields.title}
           </h1>
           <Edit className={'mobileView'}>
-            <Link className={'gitBtn'} to={`${docsLocation}/${mdx.parent.relativePath}`}>
+            <ExternalLink className={'gitBtn'} to={`${docsLocation}/${mdx.parent.relativePath}`}>
               <img src={gitHub} alt={'Github logo'} /> Edit on GitHub
-            </Link>
+            </ExternalLink>
           </Edit>
         </div>
         <div className={'mainWrapper'}>

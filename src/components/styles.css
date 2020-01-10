@@ -1,4 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@font-face {
+  font-family: "Anteb-Regular";
+  src: url('../../static/font/Anteb-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AntebAlt-Black";
+  src: url('../../static/font/AntebAlt-Black.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AntebAlt-ExtraBlack";
+  src: url('../../static/font/AntebAlt-ExtraBlack.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 
 * {
   margin: 0;
@@ -19,22 +38,7 @@
 }
 html, body {
   height: 100%;
-  font-family: -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    "Roboto",
-    "Roboto Light",
-    "Oxygen",
-    "Ubuntu",
-    "Cantarell",
-    "Fira Sans",
-    "Droid Sans",
-    "Helvetica Neue",
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol";
-
+  font-family: "Avenir Next", "Avenir", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif !important;
   font-size: 16px;
 }
 
@@ -43,10 +47,6 @@ a {
   color: #663399;
 }
 
-
-body {
-  font-family: 'Roboto';
-}
 .visibleMobile {
   display: none;
 }
@@ -245,7 +245,6 @@ a:hover {
 }
 
 .logoContent {
-  font-family: 'Roboto';
   margin-left: 16px;
   font-size: 28px;
   line-height: 1.5;
@@ -295,7 +294,6 @@ a:hover {
   -webkit-overflow-scrolling: touch;
 }
 .navBarUL li a {
-  font-family: 'Roboto';
   color: #595959 !important;
   font-size: 16px;
   font-weight: 500;
@@ -303,18 +301,19 @@ a:hover {
   opacity: 1;
   padding: 10px 15px;
 }
-.navBarNav
-{
+.navBarNav {
   display: flex;
   align-items: center;
+  font-family: "Anteb-Regular";
+  text-transform: uppercase;
+  margin: 0;
 }
-.navBarUL li a img, .navBarUL li a .shareIcon
-{
+
+.navBarUL li a img, .navBarUL li a .shareIcon {
   width: 20px;
 }
 .mainWrapper {
   color: rgb(59, 69, 78);
-  max-width: 750px;
 }
 .navBarUL li a:hover {
   opacity: .7;
@@ -340,7 +339,6 @@ pre {
 
 /* Header section ends here */
 .headerNav {
-  font-family: 'Roboto';
   padding: 0px 24px;
   color: rgb(116, 76, 188);
   font-size: 16px;
@@ -871,6 +869,7 @@ img {
   }
 
   .navBarDefault {
+    height: 75px;
     display: block;
   }
 
@@ -985,11 +984,15 @@ img {
   overflow: hidden;
 }
 
+.standard-layout-container {
+  height: 100%;
+  overflow: scroll;
+}
+
 /* Headers */
 
-h2 {
-  margin-top: 40px;
-  margin-bottom: 40px;
+h1, h2, h3 {
+  margin: 40px 0;
 }
 
 /* Info block, Warning Block */
@@ -1032,4 +1035,63 @@ h2 {
 .info-block-icon {
   left: 13px;
   position: absolute;
+}
+
+.docs-main-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+/*   FOOTER   */
+
+.footer {
+  color: #666 !important;
+  line-height: 28px;
+  background-color: #EDF0F2;
+  padding: 60px 0 20px 0;
+}
+
+.footer ul {
+  list-style-type: none;
+  margin-bottom: 1.8rem;
+}
+
+.footer li {
+  font-size: 15px;
+}
+
+.footer li a {
+  color: #666
+}
+
+.footer h5 {
+  letter-spacing: 1px;
+  font-family: "Anteb-Regular";
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.footer .social li a {
+  color: #4FC7F3;
+  font-size: 20px
+}
+
+.footer .list-inline-item:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.sub-footer, .sub-footer li {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.sub-footer ul {
+  margin: 0;
+}
+
+.sub-footer-item li {
+  list-style-type: none;
 }

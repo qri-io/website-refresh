@@ -23,10 +23,17 @@ const plugins = [
     }
   },
   {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      name: 'pages',
+      path: `${__dirname}/src/pages/`
+    }
+  },
+  {
     resolve: 'gatsby-plugin-mdx',
     options: {
       defaultLayouts: {
-        docs: require.resolve('./src/layouts/docs.js')
+        pages: require.resolve('./src/layouts/markdown-page.js')
       },
       gatsbyRemarkPlugins: [
         {

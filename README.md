@@ -34,3 +34,18 @@ Docs articles will list in alphabetical order by default, but can be ordered man
 ## Redirects
 
 Redirects are defined in `gatsby-node.js`.  The plugin `gatsby-plugin-netlify` generates pages for each redirect during build.
+
+## Markdown Docs vs Markdown Pages
+
+### Docs
+For the `/docs` section of the site, all content lives in `/content/docs`, and can be markdown or MDX.  These are transformed into pages via `createPages()` in `gatsby-node.js`, which does all the fancy graphQL work to make the docs navigation (left sidebar) and contents (right sidebar).
+
+### Pages
+Most of the content in `/pages` is JSX, but you can mix in markdown files as well.  These are simply rendered and placed into a simple layout component (`src/layouts/markdown-page.js`).  There is no complex graphQL stuff, but the following frontmatter fields should exist so we can populate the title and head meta on these pages:
+
+```
+---
+metaTitle: "Frequently Asked Questions"
+metaDescription: "Frequently Asked Questions about Qri"
+---
+```
