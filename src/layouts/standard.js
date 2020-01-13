@@ -15,14 +15,13 @@ export const Wrapper = styled('div')`
 
 export const Content = styled('main')`
   overflow: auto;
-  padding-top: 3rem;
   padding-bottom: 3rem;
 `
 
 const StandardLayout = ({ children }) => {
   return (
     <div className='standard-layout-container d-flex flex-column'>
-      <div className='container flex-grow-1'>
+      <div className='flex-grow-1'>
         <Content>
           {children}
         </Content>

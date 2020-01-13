@@ -2,7 +2,6 @@ import React from 'react'
 import Tree from './tree'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from '@emotion/styled'
-import '../styles.css'
 
 // eslint-disable-next-line no-unused-vars
 const ListItem = styled(({ className, active, level, ...props }) => {

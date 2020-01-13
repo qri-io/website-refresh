@@ -6,7 +6,6 @@ import styled from '@emotion/styled'
 import DocsColumns from '../components/docs-columns'
 import ExternalLink from '../components/ExternalLink'
 // import NextPrevious from '../components/NextPrevious'
-import '../components/styles.css'
 import config from '../../config'
 
 const Edit = styled('div')`

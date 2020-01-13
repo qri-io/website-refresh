@@ -1,0 +1,215 @@
+
+/* main-container */
+
+#___gatsby, #gatsby-focus-wrapper {
+  height: 100%;
+}
+
+.main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  height: 100%;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.standard-layout-container {
+  height: 100%;
+  overflow: scroll;
+}
+
+/* Headers */
+
+h1, h2, h3 {
+  margin: 40px 0;
+}
+
+/* Buttons */
+
+$primary-color: #123357;
+$secondary-color: #EDF0F2;
+
+.btn {
+  font-family: 'Anteb-Regular';
+  border: none !important;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 1px 7px 0px rgba(0,0,0,0.28);
+  -moz-box-shadow: 0px 1px 7px 0px rgba(0,0,0,0.28);
+  box-shadow: 0px 1px 7px 0px rgba(0,0,0,0.28);
+}
+
+.btn-lg {
+  min-width: 175px;
+}
+
+.btn-primary {
+  background-color: $primary-color;
+
+  &:hover, &:active {
+    background-color: lighten($primary-color, 10%) !important;
+  }
+}
+
+.btn-secondary {
+  background-color: $secondary-color;
+  color: #000;
+
+  &:hover, &:active  {
+    color: #000 !important;
+    background-color: darken($secondary-color, 3%) !important;
+  }
+}
+
+
+/* Info block, Warning Block */
+
+/* based on https://render.com/docs/configure-cloudflare-dns */
+
+.info-block {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 12px 12px 12px 40px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 6px;
+  background-position: 12px 12px;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  color: rgba(39,41,56,0.8);
+  line-height: 1.6rem;
+  position: relative;
+}
+
+.info-block.info {
+  border-color: rgba(67,81,232,0.1);
+  background-color: rgba(79,101,241,0.05);
+}
+
+.info-block.info svg {
+  color: rgba(67, 81, 232, 0.53);
+}
+
+.info-block.warning {
+  border-color: rgba(255,193,93,0.5);
+  background-color: rgba(255,193,93,0.08);
+}
+
+.info-block.warning svg {
+  color: rgba(255, 193, 93, 0.74);
+}
+
+.info-block-icon {
+  left: 13px;
+  position: absolute;
+}
+
+.docs-main-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+/*   FOOTER   */
+
+.footer {
+  color: #666 !important;
+  line-height: 28px;
+  background-color: #EDF0F2;
+  padding: 60px 0 20px 0;
+}
+
+.footer ul {
+  list-style-type: none;
+  margin-bottom: 1.8rem;
+}
+
+.footer li {
+  font-size: 15px;
+}
+
+.footer li a {
+  color: #666
+}
+
+.footer h5 {
+  letter-spacing: 1px;
+  font-family: "Anteb-Regular";
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.footer .social li a {
+  color: #4FC7F3;
+  font-size: 20px
+}
+
+.footer .list-inline-item:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.sub-footer, .sub-footer li {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.sub-footer ul {
+  margin: 0;
+}
+
+.sub-footer-item li {
+  list-style-type: none;
+}
+
+/*   HOME PAGE   */
+
+.index-row {
+  padding: 120px 0;
+
+  p {
+    font-weight: 500;
+    margin-bottom: 32px;
+  }
+}
+
+.hero-table {
+  font-size: 3.4rem;
+  font-family: "Anteb-Black";
+  margin-bottom: 20px;
+
+  tr:nth-child(2n) {
+    background-color: #e1f8ff;
+  }
+
+  td {
+    letter-spacing: 1px;
+    border: 2px solid #D8D8D8;
+    line-height: 3rem;
+
+    &.highlighted {
+      border-color: #4FCAF37D;
+    }
+
+    &.highlighted-border-bottom {
+      border-bottom-color: #4FCAF37D;
+    }
+
+    span {
+      position: relative;
+      top: 9px;
+    }
+  }
+}
+
+#navbar {
+  flex: 1;
+
+  .navBarNav {
+    justify-content: flex-end;
+  }
+}

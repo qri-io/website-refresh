@@ -1,7 +1,6 @@
 import React from 'react'
 import CodeBlock from './codeBlock'
 // import AnchorTag from './anchor'
-import '../styles.css'
 
 const p = props => <p className='paragraph' {...props} />
 const pre = props => <pre className='pre' {...props} />

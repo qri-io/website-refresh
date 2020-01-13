@@ -5,6 +5,7 @@ import StandardLayout from './standard'
 import Header from '../components/Header'
 
 import 'bootstrap/dist/css/bootstrap.css'
+import '../scss/style.scss'
 
 // this is the top-level layout, which includes the header and main content area
 // the regular gatsby (jsx) pages will use a standard layout

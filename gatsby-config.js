@@ -3,6 +3,7 @@ const queries = require('./src/utils/algolia')
 const config = require('./config')
 const plugins = [
   'gatsby-plugin-eslint',
+  'gatsby-plugin-sass',
   'gatsby-plugin-netlify',
   'gatsby-plugin-sitemap',
   'gatsby-plugin-sharp',

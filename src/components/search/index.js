@@ -13,7 +13,6 @@ import styled from '@emotion/styled'
 import { PoweredBy } from './styles'
 import Input from './input'
 import * as hitComps from './hitComps'
-import '../styles.css'
 
 const HitsWrapper = styled.div`
   display: ${props => (props.show ? 'grid' : 'none')};

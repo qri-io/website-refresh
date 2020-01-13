@@ -1,5 +1,5 @@
 import React from 'react'
-import './components/styles.css'
+import './scss/style.css'
 
 const CommunityAuthor = ({ name, imageUrl, twitterUrl, githubUrl, description }) => {
   return (
