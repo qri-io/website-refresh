@@ -1043,6 +1043,13 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.26"
 
+"@fortawesome/free-regular-svg-icons@^5.12.0":
+  version "5.12.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-regular-svg-icons/-/free-regular-svg-icons-5.12.0.tgz#9b7ed5dbd7581aab47960802cc116fdc8b6c8b7d"
+  integrity sha512-FAvpmylTs0PosHwHrWPQX6/7ODc9M11kCE6AOAujFufDYzqTj2cPHT4yJO7zTEkKdAbbusJzbWpnOboMuyjeQA==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.26"
+
 "@fortawesome/free-solid-svg-icons@5.12.0":
   version "5.12.0"
   resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.12.0.tgz#8decac5844e60453cc0c7c51437d1461df053a35"
@@ -1511,13 +1518,6 @@
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
     warning "^3.0.0"
-
-"@rehooks/window-scroll-position@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@rehooks/window-scroll-position/-/window-scroll-position-1.0.1.tgz#3cb80f22cbf9cdbd2041b5236ae1fce8245b2f1c"
-  integrity sha512-+7uUcU2DBzXW4ygKTCqjCrtT4Nq0f+hNxQvAw69pXSBc7DbqmzfpxrYu27dT4tXrUKSQPFPpo5AdMv2oUJVM7g==
-  dependencies:
-    lodash.throttle "^4.1.1"
 
 "@restart/context@^2.1.4":
   version "2.1.4"

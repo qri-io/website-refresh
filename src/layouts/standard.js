@@ -15,18 +15,15 @@ export const Wrapper = styled('div')`
 
 export const Content = styled('main')`
   overflow: auto;
-  padding-bottom: 3rem;
 `
 
 const StandardLayout = ({ children }) => {
   return (
-    <div className='standard-layout-container d-flex flex-column'>
-      <div className='flex-grow-1'>
-        <Content>
-          {children}
-        </Content>
-      </div>
-      <Footer />
+    <div className='standard-layout-wrapper flex-column'>
+      <Content>
+        {children}
+        <Footer />
+      </Content>
     </div>
   )
 }
