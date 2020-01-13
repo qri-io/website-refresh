@@ -13,7 +13,7 @@ const IndexPage = () => (
     }}>
       <div className='container'>
         <div className='row'>
-          <div className='col-12 col-lg-5'>
+          <div className='col-12 col-md-5 col-lg-5'>
             <table className='hero-table'>
               <tbody>
                 <tr>
@@ -25,7 +25,7 @@ const IndexPage = () => (
                 </tr>
               </tbody>
             </table>
-            <p>Qri helps you clean, version, organize, and share datasets.  Free & Open Source.</p>
+            <p>Qri helps you clean, version, organize, and share datasets.</p>
             <div className='btn btn-lg btn-primary'>download</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div className='btn btn-lg btn-secondary'>learn more</div>
           </div>
         </div>
