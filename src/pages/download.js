@@ -14,6 +14,9 @@ const windowsDownloadUrl = `https://github.com/qri-io/desktop/releases/download/
 const DownloadPage = () => (
   <>
     <Helmet>
+      <title>Download Qri</title>
+      <meta name="title" content='Download Qri' />
+      <meta name="description" content={'Download Qri Desktop for Mac or Windows'} />
       <script src='/js/download.js' />
     </Helmet>
     <div id="splash" className="windows">

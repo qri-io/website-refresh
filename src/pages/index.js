@@ -1,4 +1,5 @@
 import React from 'react'
+import Helmet from 'react-helmet'
 import MailingList from '../components/MailingList'
 import ExternalLink from '../components/ExternalLink'
 
@@ -7,6 +8,12 @@ import { Link } from 'gatsby'
 
 const IndexPage = () => (
   <div id="main" className="index">
+    <Helmet>
+      <title>Qri - A distributed dataset version control system</title>
+      <meta name="title" content='Qri - A distributed dataset version control system' />
+      <meta name="description" content={'Website for Qri, Inc.'} />
+      <script src='/js/download.js' />
+    </Helmet>
     <header id="hero">
       <div className="wrap">
         <div id="blob_trio"></div>

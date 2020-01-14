@@ -4,6 +4,9 @@ import Helmet from 'react-helmet'
 const BetaPage = () => (
   <div className='container'>
     <Helmet>
+      <title>Qri Beta Program</title>
+      <meta name="title" content='Qri Beta Program' />
+      <meta name="description" content={'Join the Qri beta program to try out new features'} />
       <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css" />
     </Helmet>
     <h2>Sign up to Beta Test Qri!</h2>
