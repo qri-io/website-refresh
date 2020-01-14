@@ -1,5 +1,6 @@
 import React from 'react'
-import Link from './link'
+import { Link } from 'gatsby'
+
 class NextPrevious extends React.Component {
   render () {
     const { mdx, nav } = this.props

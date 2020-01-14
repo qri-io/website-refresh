@@ -17,7 +17,9 @@ const MarkdownPageLayout = (props) => {
         {metaTitle ? <meta property="twitter:title" content={metaTitle} /> : null}
         {metaDescription ? <meta property="twitter:description" content={metaDescription} /> : null}
       </Helmet>
-      {children}
+      <div className='container'>
+        {children}
+      </div>
     </MDXProvider>
   )
 }

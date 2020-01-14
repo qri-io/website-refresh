@@ -1,7 +1,6 @@
 import React from 'react'
-import { StaticQuery, graphql } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
 import GitHubButton from 'react-github-btn'
-import Link from './link'
 import config from '../../config.js'
 
 import Loadable from 'react-loadable'

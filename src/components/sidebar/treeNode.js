@@ -1,6 +1,6 @@
 import React from 'react'
 import config from '../../../config'
-import Link from '../link'
+import { Link } from 'gatsby'
 
 const TreeNode = ({ className = '', setCollapsed, collapsed, url, title, items, ...rest }) => {
   const isCollapsed = collapsed[url]
