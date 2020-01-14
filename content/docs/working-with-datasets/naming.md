@@ -4,9 +4,6 @@ metaTitle: "Naming Datasets in Qri"
 metaDescription: "This page describes the various notations for referencing a specific dataset on the Qri network."
 ---
 
-
-🖥 Screenshot of dataset list in desktop showing datasets from a few different users
-
 What's in a name?  There are several ways of referring to datasets in Qri.  Here are some examples of each.
 
 ## Shorthand Dataset References

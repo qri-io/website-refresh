@@ -7,9 +7,6 @@ weight: 2
 
 import InfoBlock from '../../../src/components/InfoBlock.js'
 
-
-🖼 Dataset Components Header
-
 ## Overview
 
 The __body__ component is a *single table* of data. The other components of a dataset are information that complements that table (metadata, structure information, column types and descriptions, etc.), but _body_ is the table itself.

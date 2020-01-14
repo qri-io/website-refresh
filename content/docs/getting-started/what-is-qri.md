@@ -17,9 +17,6 @@ Qri's dataset format combines tabular data with all of the things that are missi
 
 All of these components live together under a single structure. More importantly, they are all versioned together.
 
-
-🖼 Qri Components image
-
 <InfoBlock>
   See <a href="/docs/dataset-components/overview/">Dataset Components</a> for more info on the building blocks of a Qri dataset.
 </InfoBlock>
@@ -29,8 +26,6 @@ All of these components live together under a single structure. More importantly
 Qri datasets are versioned.  When you make a change to a dataset, whether it be reformatting values in a column or adding a description to the metadata, you must *commit* the changes and establish a *new version* of the dataset.
 
 The version has a timestamp, your identity, and a message for future you (or other users you share the dataset with).
-
-🖼 Qri Versions image
 
 See [Versioning Datasets](/docs/working-with-datasets/versioning/) for more info on versioning in Qri.
 
@@ -44,8 +39,6 @@ Qri datasets are easily portable over Qri's peer-to-peer network.  This means th
 
 Likewise, once you have Qri running on your computer, you can pull down other Qri users' datasets to view and modify locally.
 
-🖼 Qri Network image
-
 See [Publishing Datasets](/docs/working-with-datasets/publishing/) for more info on publishing your datasets in Qri.
 
 ## Conceptual Model
@@ -57,5 +50,3 @@ We combine networking, versioning, and our data format into a _network of datase
 ## Get Started with Qri
 
 You can start bringing your datasets into Qri right now!  [Download Qri Desktop](/download/) for free, import a CSV, and make your first dataset version.
-
-🖼 Download Qri Button

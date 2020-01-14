@@ -8,8 +8,6 @@ weight: 4
 import InfoBlock from '../../../src/components/InfoBlock.js'
 
 
-🖼 Dataset Components Header
-
 ## Overview
 
 The __meta__ component contains human-readable descriptive metadata that qualifies and distinguishes a dataset.

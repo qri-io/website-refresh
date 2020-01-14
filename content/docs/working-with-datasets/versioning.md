@@ -4,10 +4,6 @@ metaTitle: ""
 metaDescription: ""
 ---
 
-
-🖥 Screenshot of a logical string of commits in Desktop
-🖼 Screenshot of a historic commit with annotations explaining colored dots (meta was added this commit and is green, the body was modified and is orange, the user left this message, this is the timestamp)
-
 Qri Datasets are versioned using a process similar to git.  A user can make changes to a working copy of a dataset’s components, and commit those changes once an important milestone is reached. A commit creates a new version of the dataset which is immutable, timestamped, and identified by a hash.
 
 A dataset’s components are always connected and are versioned together, meaning changes to any individual component will result in a new version of the dataset.
