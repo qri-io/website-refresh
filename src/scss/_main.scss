@@ -271,3 +271,116 @@ $light-blue-hr: 2px solid #4fc6f3;
     justify-content: flex-end;
   }
 }
+
+/*   Docs Page   */
+
+.docs-page {
+    h1, h2 {
+      font-family: 'AntebAlt-Black';
+      margin: 9px 0;
+    }
+
+    h1 {
+      font-size: 3.3rem;
+    }
+
+    h2 {
+      font-size: 2.1rem;
+    }
+
+  .docs-hero {
+    background-image: url("/img/graphics/docs-hero.png");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    padding-top: 100px;
+    padding-bottom: 20px;
+    background-position: right 155px top 10px;
+    background-size: 50%;
+
+    @media only screen and (max-width: 991px) {
+      background-position: right 43px top 31px;
+    }
+
+    .docs-title {
+      margin-bottom: 18px;
+
+      p {
+        font-weight: 500;
+      }
+    }
+
+    $tile-blue: #4fc7f3;
+    $tile-dark-gray: #484848;
+
+    .docs-feature-tile-container {
+      padding-bottom: 16px;
+    }
+
+    .docs-feature-tile {
+      background: $tile-blue;
+      padding: 16px;
+      height: 100%;
+      border-radius: 3px;
+
+      img {
+        margin-top: 8px;
+      }
+
+      h2 {
+        margin-top: 0;
+        color: #FFF;
+      }
+
+      p {
+        color: #FFF;
+      }
+
+      &:hover, &:active {
+        background-color: darken($tile-blue, 10%) !important;
+      }
+
+      &.dark {
+        background: $tile-dark-gray;
+
+        h2 {
+          color: #D8D8D8;
+        }
+
+        &:hover, &:active {
+          background-color: lighten($tile-dark-gray, 10%) !important;
+        }
+      }
+    }
+  }
+  // override css for the docs sidebar menu
+  .sideBarUL {
+    display: flex;
+    flex-wrap: wrap;
+
+    .section-header {
+      padding: 0;
+      letter-spacing: 1px;
+      font-family: "Anteb-Regular";
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+
+    .firstLevel.item {
+      margin-right: 37px;
+      margin-bottom: 39px;
+    }
+
+    .item {
+      margin: 0;
+      padding: 0;
+      font-weight: 500;
+    }
+
+    .item > a {
+      padding: 0;
+      color: #717171;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+  }
+}
