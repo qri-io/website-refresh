@@ -15,13 +15,22 @@ export const Wrapper = styled('div')`
 
 export const Content = styled('main')`
   overflow: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @media only screen and (max-width: 767px) {
+    height: auto;
+  }
 `
 
 const StandardLayout = ({ children }) => {
   return (
     <div className='standard-layout-wrapper flex-column'>
       <Content>
-        {children}
+        <div style={{ flex: '1 0 auto' }}>
+          {children}
+        </div>
         <Footer />
       </Content>
     </div>
