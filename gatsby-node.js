@@ -1,13 +1,20 @@
-const componentWithMDXScope = require('gatsby-plugin-mdx/component-with-mdx-scope')
 const path = require('path')
 const startCase = require('lodash.startcase')
 
 // [ fromPath, toPath ]
 const redirects = [
-  ['/blog/*', 'https://medium.com/qri-io'],
   ['/blog', 'https://medium.com/qri-io'],
+  ['/blog/a_better_mousetrap_podcast/', 'https://medium.com/qri-io/a-better-mousetrap-podcast-6cd068aba347'],
+  ['/blog/datasets_are_books/', 'https://medium.com/qri-io/datasets-are-books-not-houses-760bd4736229'],
+  ['/blog/introducing_qri/', 'https://medium.com/qri-io/introducing-qri-3b0e7fb470da'],
+  ['/blog/mlb_homeruns/', 'https://medium.com/qri-io/leave-the-munging-to-the-machines-mlb-edition-9c23c82b4867'],
+  ['/blog/qri_out_and_about/', 'https://medium.com/qri-io/qri-oot-and-aboot-7d5f5c591908'],
+  ['/blog/unit_test_performance/', 'https://medium.com/qri-io'],
+  ['/blog/*', 'https://medium.com/qri-io'],
+
   ['/desktop', '/download'],
   ['/desktop/getting-started', '/docs/getting-started/qri-desktop-quickstart'],
+
   ['/docs/concepts/content-addressing', '/docs/reference/content-addressing'],
   ['/docs/concepts/dataset', '/docs/dataset-components/overview'],
   ['/docs/concepts/ipfs_to_qri', '/docs/reference/ipfs_to_qri'],
@@ -22,6 +29,7 @@ const redirects = [
   ['/docs/reference/starlib', '/docs/starlark/starlib'],
   ['/docs/reference', '/docs'],
   ['/docs/workflows', '/docs'],
+
   ['/papers/deterministic_querying', '/deterministic-querying']
 ]
 

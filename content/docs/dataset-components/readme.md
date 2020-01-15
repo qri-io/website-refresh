@@ -8,6 +8,8 @@ weight: 4
 
 import InfoBlock from '../../../src/components/InfoBlock.js'
 
+<img src="/img/qri-dataset-model.png" />
+
 ## Overview
 
 The __readme__ component is free-form text used to describe a dataset.  Isn't that what metadata is for?  Yes, but often structured metadata fields aren't a sufficient mechanism for explaining the nuances of a dataset.  Readme is your chance to use more human-friendly language to explain the dataset.

@@ -7,6 +7,7 @@ weight: 5
 
 import InfoBlock from '../../../src/components/InfoBlock.js'
 
+<img src="/img/qri-dataset-model.png" />
 
 ## Overview
 

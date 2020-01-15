@@ -56,8 +56,8 @@ const Footer = () => {
           </div>
           <div className='col-12 col-sm-6 sub-footer text-sm-right'>
             <ul className='list-inline'>
-              <li className='list-inline-item'><Link to='/'>Terms of Service</Link></li>
-              <li className='list-inline-item'><Link to='/'>Privacy Policy</Link></li>
+              <li className='list-inline-item'><Link to='/legal/tos'>Terms of Service</Link></li>
+              <li className='list-inline-item'><Link to='/legal/privacy-policy'>Privacy Policy</Link></li>
             </ul>
           </div>
         </div>

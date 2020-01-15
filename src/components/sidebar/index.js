@@ -46,6 +46,7 @@ const Sidebar = styled('aside')`
   top: 0;
   padding-right: 0;
   background-color: #FFF;
+  padding-top: 15px;
 
   @media only screen and (max-width: 1023px) {
     width: 100%;

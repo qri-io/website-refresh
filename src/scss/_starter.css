@@ -242,10 +242,10 @@ a:hover {
   display: flex;
   align-items: center;
   z-index: 1;
-  padding: 15px;
   position: relative;
 }
 .navBarHeader {
+  padding: 15px;
   min-width: 335px;
   padding-right: 20px;
   flex: 1;
@@ -337,7 +337,7 @@ pre {
 }
 
 .sideBarUL {
-  margin: 32px 0 32px 0;
+  margin: 5px 0 10px 0;
 }
 
 .sideBarUL li {
@@ -792,7 +792,7 @@ img {
   .responsive {
     margin-top: 15px;
     position: relative;
-    border-top: 1px solid #595959;
+    padding: 0 15px 15px 15px;
   }
   .headerTitle {
     padding-right: 50px;
@@ -813,7 +813,6 @@ img {
   .topnav.responsive .navBarUL{
     display: block;
     text-align: left;
-    margin: 32px 0 0 0;
   }
   .hiddenMobile {
     display: none !important;
@@ -835,10 +834,10 @@ img {
   .navBarUL {
     display: flex;
     align-items: center;
-    margin: 7.5px 0px;
+    padding-top: 15px;
   }
   .navBarUL li {
-    height: 37px;
+    margin-bottom: 5px;
   }
   .navBarUL li a {
     font-size: 14px;
@@ -914,12 +913,13 @@ img {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  .navBarDefault {
-    padding: 10px;
+  #navbar {
+    margin-right: 5px;
   }
   .navBarBrand {
     font-size: 22px;
   }
+
   .navBarHeader {
     min-width: 240px;
     flex: initial;
@@ -935,9 +935,16 @@ img {
     max-width: 500px;
   }
   .navBarUL li a {
-    padding: 10px 5px;
+    padding: 10px 10px;
   }
   .searchWrapper {
     padding-left: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  #navbar {
+    margin: 0;
+    background: #EDF0F2;
   }
 }

@@ -7,6 +7,8 @@ weight: 5
 
 import InfoBlock from '../../../src/components/InfoBlock.js'
 
+<img src="/img/qri-dataset-model.png" />
+
 ## Overview
 
 The __transform__ component allows users to attach scripting to Qri datasets.  This allowing for automated updates and workflows that combine several datasets into a single output dataset.
