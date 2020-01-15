@@ -3,7 +3,7 @@ metaTitle: "Qri Privacy Policy"
 metaDescription: "Qri Privacy Policy for Qri, Inc."
 ---
 
-# Qri Privacy Policy
+# QRI PRIVACY POLICY
 
 Last Updated: September 17, 2019
 

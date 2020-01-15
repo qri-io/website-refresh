@@ -21,7 +21,8 @@ const redirects = [
   ['/docs/reference/starlark_examples', '/docs/starlark/examples'],
   ['/docs/reference/starlib', '/docs/starlark/starlib'],
   ['/docs/reference', '/docs'],
-  ['/docs/workflows', '/docs']
+  ['/docs/workflows', '/docs'],
+  ['/papers/deterministic_querying', '/deterministic-querying']
 ]
 
 exports.createPages = ({ graphql, actions }) => {
